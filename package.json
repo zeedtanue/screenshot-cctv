@@ -1,0 +1,21 @@
+{
+  "name": "screenshot-script",
+  "version": "1.0.0",
+  "description": "for tplus interactive",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js",
+    "start": "functions-framework --target=screenshot"
+  },
+  "author": "Tamzeed Hossain",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^1.7.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7",
+    "puppeteer": "^6.0.0",
+    "puppeteer-core": "^6.0.0",
+    "serve-index": "^1.9.1"
+  }
+}
