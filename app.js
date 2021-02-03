@@ -23,12 +23,11 @@ const screenshot = async(req,res)=>{
     
         await page.screenshot({
          type:'png',
-        path: path.join(__dirname,`./public/ss/screenshot${timeString.toString()}.png`),
+        path: path.join(__dirname,`./public/live/screenshot${timeString.toString()}.png`),
     
     });
-    console.log(`screenshot has been saved screenshot${timeString.toString()}.png`)},5000)
+    console.log(`screenshot has been saved screenshot${timeString.toString()}.png`)},3*60*100)
 
-    setTimeout(ss, 1600000)
     context.close()
 }
 

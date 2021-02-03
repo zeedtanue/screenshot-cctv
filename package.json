@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "nodemon app.js",
-    "start": "functions-framework --target=screenshot"
+    "start": "nodemon index.js"
   },
   "author": "Tamzeed Hossain",
   "license": "ISC",
