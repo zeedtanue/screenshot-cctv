@@ -5,7 +5,7 @@ const { setInterval } = require('timers');
 
 
 
-let browserPromise = puppeteer.launch({product:"chrome",
+let browserPromise = puppeteer.launch({product:"chrome",headless:false,
     args:[
         '--no-sandbox',
     ]
@@ -14,12 +14,13 @@ let browserPromise = puppeteer.launch({product:"chrome",
 const screenshot = async()=>{
     try {
         
-    const url =  'https://www.youtube.com/watch?v=FZ02VT9XACY';
+    const url =  'https://thiscatdoesnotexist.com/';
     const browser = await browserPromise;
     const context = await browser.createIncognitoBrowserContext();
     const page = await context.newPage()
 
     await page.goto(url);
+    await page.waitForTimeout(4000)
     
     const date= new Date()
     const timeString = `${date.toDateString()} Time${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}-${ date.getUTCMilliseconds()}`
@@ -29,7 +30,6 @@ const screenshot = async()=>{
       path: path.join(__dirname,`./public/live/screenshot${timeString.toString()}.png`),
     });
     console.log(`screenshot has been saved screenshot${timeString.toString()}.png`)
-
     await context.close()
         
     } catch (error) {
