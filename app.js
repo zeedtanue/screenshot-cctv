@@ -5,7 +5,7 @@ const { setInterval } = require('timers');
 
 
 
-let browserPromise = puppeteer.launch({product:"chrome",headless:false,
+let browserPromise = puppeteer.launch({product:"chrome",
     args:[
         '--no-sandbox',
     ]
