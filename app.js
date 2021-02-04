@@ -1,15 +1,12 @@
 const puppeteer= require('puppeteer');
 const path= require('path');
-const { throws, rejects } = require('assert');
 const { setInterval } = require('timers');
 
 
 
 let browserPromise = puppeteer.launch({product:"chrome",
-    args:[
-        '--no-sandbox',
-        
-    ]
+args: ["--disable-setuid-sandbox"],
+'ignoreHTTPSErrors': true
 });
 
 const screenshot = async()=>{
@@ -34,7 +31,7 @@ const screenshot = async()=>{
     await context.close()
         
     } catch (error) {
-        console.log(error)
+        console.log(error.message)
     }
     
 }
