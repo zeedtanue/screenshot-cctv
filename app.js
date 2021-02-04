@@ -1,10 +1,11 @@
 const puppeteer= require('puppeteer');
-const path= require('path');
 const { setInterval } = require('timers');
 
 
 
-let browserPromise = puppeteer.launch({product:"chrome",executablePath: '/usr/bin/chromium-browser',
+let browserPromise = 
+
+puppeteer.launch({product:"chrome",executablePath: '/usr/bin/chromium-browser',
 args: ["--disable-setuid-sandbox",
 "--no-sandbox "],
 'ignoreHTTPSErrors': true
@@ -26,7 +27,7 @@ const screenshot = async()=>{
     
     await page.screenshot({
       type:'png',
-      path: path.join(__dirname,`./public/live/screenshot${timeString.toString()}.png`),
+      path: `./public/live/screenshot${timeString.toString()}.png`
     });
     console.log(`screenshot has been saved screenshot${timeString.toString()}.png`)
     await context.close()
