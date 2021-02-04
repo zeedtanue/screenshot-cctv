@@ -4,7 +4,7 @@ const { setInterval } = require('timers');
 
 
 
-let browserPromise = puppeteer.launch({product:"chrome",
+let browserPromise = puppeteer.launch({product:"chrome",executablePath: '/usr/bin/chromium-browser',
 args: ["--disable-setuid-sandbox"],
 'ignoreHTTPSErrors': true
 });
