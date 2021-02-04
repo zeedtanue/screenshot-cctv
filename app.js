@@ -1,12 +1,12 @@
 const puppeteer= require('puppeteer');
 const path= require('path');
+const { throws, rejects } = require('assert');
 const { setInterval } = require('timers');
 
 
 
-let browserPromise = puppeteer.launch({product:"chrome",pipe:true,
+let browserPromise = puppeteer.launch({product:"chrome",
     args:[
-
         '--no-sandbox',
         
     ]
